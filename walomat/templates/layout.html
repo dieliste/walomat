@@ -1,0 +1,29 @@
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as lang_code %}
+
+<!DOCTYPE html>
+<html lang="{{ lang_code }}">
+	<head>
+		<meta charset="utf-8">
+		<title>Wal-O-Mat 🐋</title>
+		<link href="{% static 'style.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<main>
+			<header>
+				{% block change_lang %}{% endblock %}
+
+				<h1>Wal-O-Mat 🐋</h1>
+				<h2>{% block subtitle %}{% endblock %}</h2>
+			</header>
+
+			<div class="container">
+				{% block content %}
+				{% endblock %}
+			</div>
+
+		</main>
+	</body>
+</html>

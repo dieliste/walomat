@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block change_lang %}
+{% if lang_code == 'en' %}
+<a href="/de/"><img src="{% static 'de.png' %}" width="32" height="16" style="float: right;" /></a>
+{% else %}
+<a href="/en/"><img src="{% static 'en.png' %}" width="32" height="16" style="float: right;" /></a>
+{% endif %}
+{% endblock %}
+
+{% block subtitle %}
+{{ election.title }}
+{% endblock %}
+
+{% block content %}
+<h3>{% trans 'Welcome to the Wal-O-Mat 🐳' %}</h3>
+
+<p>{% trans 'Thousands of lists have answered thousands of questions.' %}</p>
+
+<p>{% trans 'Find out which Wal-list is your favorite.' %}</p>
+
+{% if first_thesis_id %}
+<a href="{{ first_thesis_id }}">Start</a>
+{% else %}
+{% trans 'There is currently no election.' %}
+{% endif %}
+{% endblock %}

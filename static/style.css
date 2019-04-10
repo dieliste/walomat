@@ -1,0 +1,145 @@
+a {
+	text-decoration: none;
+}
+
+h1, h3 {
+	margin: 0;
+}
+
+body {
+	background: linear-gradient(180deg, #02AAB0 0%, #00CDAC 100%); 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+main {
+	width: 606px;
+	margin: 50px auto;
+	padding: 20px;
+	border: 3px solid white;
+}
+
+div.thesis div {
+	position: relative;
+	min-height: 108px;
+	margin: 30px;
+	padding: 10px 10px 50px 10px;
+	background-color: white;
+}
+
+div.thesis div ul {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: table;
+	width: 400px;
+	margin: 0 auto;
+	padding: 0 0 15px 0;
+	list-style: none;
+}
+
+div.thesis div ul li {
+	display: table-cell;
+	text-align: center;
+	border-right: 2px solid #fff;
+}
+
+div.thesis div ul li a {
+	display: block;
+	padding: 8px 30px;
+	background-color: #000;
+	color: #fff;
+}
+
+div.thesis div ul li:nth-child(1) a:hover {
+	background-color: #33cc33;
+}
+
+div.thesis div ul li:nth-child(2) a:hover {
+	background-color: #ffcc00;
+}
+
+div.thesis div ul li:nth-child(3) a:hover {
+	background-color: #cc3300;
+}
+
+div.thesis nav {
+	display: table;
+	margin: auto;
+}
+
+div.thesis nav ul {
+	display: table-row;
+}
+
+div.thesis nav ul li {
+	display: table-cell;
+	padding-right: 5px;
+}
+
+div.thesis ul li span {
+	display: block;
+	width: 6px;
+	margin-top: 1px;
+	height: 6px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+div.result table.conformance {
+	width: 100%;
+	margin: 10px 0 30px 0;
+}
+
+div.result table.conformance tr td:first-child {
+	width: 1%;
+	padding-right: 30px;
+	white-space: nowrap;
+}
+
+div.result table.conformance tr td:nth-child(2) {
+	padding: 0;
+	background-color: #eee;
+}
+
+div.result table.conformance tr td:nth-child(2) div {
+	height: 20px;
+	padding: 5px 0px 5px 3px;
+	background-color: #777;
+	white-space: nowrap;
+}
+
+div.result table.result {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+	font-weight: bold;
+}
+
+div.result table.result td, div.result table.result th {
+	border: 1px solid black;
+}
+
+div.result table.result td p {
+	font-weight: normal;
+}
+
+div.result table.result tr:first-child th {
+	border-top: 0;
+}
+
+div.result table.result tr:last-child td {
+	border-bottom: 0;
+}
+
+div.result table.result tr td:first-child,
+div.result table.result tr th:first-child {
+	text-align: left;
+	border-left: 0;
+}
+
+div.result table tr td:last-child,
+div.result table tr th:last-child {
+	border-right: 0;
+}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block change_lang %}
+{% if lang_code == 'en' %}
+<a href="/de/{{ thesis.id }}"><img src="{% static 'de.png' %}" width="32" height="16" style="float: right;" /></a>
+{% else %}
+<a href="/en/{{ thesis.id }}"><img src="{% static 'en.png' %}" width="32" height="16" style="float: right;" /></a>
+{% endif %}
+{% endblock %}
+
+{% block subtitle %}
+{{ election.title }}
+{% endblock %}
+
+{% block content %}
+<div class="thesis">
+	<div>
+		<h3>{{ thesis_no }}/{{ theses|length }} {{ thesis.topic }}</h3>
+
+		<p>{{ thesis.thesis }}</p>
+
+		<ul>
+			{% for a, b in stances %}
+			<li><a href="/{{ lang_code }}/{{ thesis.id }}/{{ a }}/">{{ b }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<nav>
+		<ul>
+			{% for thesis in theses %}
+			<li><a href="/{{ lang_code }}/{{ thesis.id }}/"><span>&nbsp;</span></a></li>
+			{% endfor %}
+		</ul>
+	</nav>
+</div>
+{% endblock %}
