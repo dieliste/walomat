@@ -32,7 +32,7 @@
 	<nav>
 		<ul>
 			{% for thesis in theses %}
-			<li><a href="/{{ lang_code }}/{{ thesis.id }}/"><span>&nbsp;</span></a></li>
+			<li><a href="/{{ lang_code }}/{{ thesis.id }}/"><span style="{% ifequal thesis.id thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
 			{% endfor %}
 		</ul>
 	</nav>
