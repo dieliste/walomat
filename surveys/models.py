@@ -91,8 +91,7 @@ class Party(models.Model):
             img.save(self.image.path)
 
     def all_answers(self):
-        return self.answer_set.filter(
-            election_id=self.election.id).order_by('id').all()
+        return self.answer_set.all()
 
     class Meta:
         verbose_name = _('party')
