@@ -8,4 +8,5 @@ exclude =
     manage.py,
     migrations,
     resources,
-    static
+    static,
+    settings.py
