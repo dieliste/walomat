@@ -1,18 +1,30 @@
+from django.core.exceptions import ValidationError
 from django.db import models
-from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 
-from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from PIL import Image
 
 
 class Election(models.Model):
-    title = models.CharField(_('title'), max_length=255)
-    accessible_from = models.DateTimeField(_('accessible from'),
-                                           default=timezone.now)
-    accessible_to = models.DateTimeField(_('accessible to'),
-                                         default=timezone.now)
+    """
+    An election with several participating parties
+    """
+
+    title = models.CharField(
+        _('title'),
+        max_length=255
+    )
+
+    accessible_from = models.DateTimeField(
+        _('accessible from'),
+        default=timezone.now
+    )
+
+    accessible_to = models.DateTimeField(
+        _('accessible to'),
+        default=timezone.now
+    )
 
     def __str__(self):
         return self.title
@@ -21,7 +33,8 @@ class Election(models.Model):
     def get_current():
         return Election.objects.filter(
             accessible_from__lt=timezone.now(),
-            accessible_to__gt=timezone.now()).first()
+            accessible_to__gt=timezone.now()
+        ).first()
 
     def first_thesis(self):
         return self.thesis_set.all().first()
@@ -38,21 +51,39 @@ class Election(models.Model):
 
 
 class Party(models.Model):
-    election = models.ForeignKey('Election',
-                                 verbose_name=_('election'),
-                                 on_delete=models.CASCADE)
-    short_name = models.CharField(_('short name'), max_length=127)
-    full_name = models.CharField(_('full name'), max_length=255)
-    image = models.ImageField(_('image'),
-                              upload_to='parties/',
-                              null=True,
-                              blank=True)
+    """
+    A party participating in an election
+    """
+
+    election = models.ForeignKey(
+        Election,
+        verbose_name=_('election'),
+        on_delete=models.CASCADE
+    )
+
+    short_name = models.CharField(
+        _('short name'),
+        max_length=127
+    )
+
+    full_name = models.CharField(
+        _('full name'),
+        max_length=255
+    )
+
+    image = models.ImageField(
+        _('image'),
+        upload_to='parties/',
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.short_name
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+
         if self.image:
             img = Image.open(self.image.path)
             output_size = (200, 200)
@@ -69,11 +100,24 @@ class Party(models.Model):
 
 
 class Thesis(models.Model):
-    election = models.ForeignKey('Election',
-                                 verbose_name=_('election'),
-                                 on_delete=models.CASCADE)
-    topic = models.CharField(_('topic'), max_length=127)
-    thesis = models.TextField(_('text'))
+    """
+    A thesis which the different parties can comment on
+    """
+
+    election = models.ForeignKey(
+        'Election',
+        verbose_name=_('election'),
+        on_delete=models.CASCADE
+    )
+
+    topic = models.CharField(
+        _('topic'),
+        max_length=127
+    )
+
+    thesis = models.TextField(
+        _('text')
+    )
 
     def __str__(self):
         return self.topic
@@ -91,6 +135,10 @@ class Thesis(models.Model):
 
 
 class Answer(models.Model):
+    """
+    The answer of one party to a thesis
+    """
+
     STANCE_PRO = '1'
     STANCE_NEUTRAL = '2'
     STANCE_AGAINST = '3'
@@ -100,23 +148,40 @@ class Answer(models.Model):
         (STANCE_AGAINST, _('disagree')),
     )
 
-    election = models.ForeignKey('Election',
-                                 verbose_name=_('election'),
-                                 on_delete=models.CASCADE)
-    party = models.ForeignKey('Party',
-                              verbose_name=_('party'),
-                              on_delete=models.CASCADE)
-    thesis = models.ForeignKey('Thesis',
-                               verbose_name=_('thesis'),
-                               on_delete=models.CASCADE)
-    stance = models.CharField(_('stance'),
-                              max_length=1,
-                              choices=STANCE_OPTIONS)
-    reasoning = models.TextField(_('reasoning'))
+    party = models.ForeignKey(
+        Party,
+        verbose_name=_('party'),
+        on_delete=models.CASCADE
+    )
+
+    thesis = models.ForeignKey(
+        Thesis,
+        verbose_name=_('thesis'),
+        on_delete=models.CASCADE
+    )
+
+    stance = models.CharField(
+        _('stance'),
+        max_length=1,
+        choices=STANCE_OPTIONS
+    )
+
+    reasoning = models.TextField(
+        _('reasoning')
+    )
 
     def __str__(self):
         (value, stance) = self.STANCE_OPTIONS[int(self.stance) - 1]
         return _('{} on {}: {}').format(self.party, self.thesis, stance)
+
+    def clean(self):
+        if self.party.election_id != self.thesis.election_id:
+            msg = 'The election field on party and thesis must be equal.'
+
+            raise ValidationError({
+                'party': msg,
+                'thesis': msg,
+            })
 
     def short_reasoning(self):
         return self.reasoning[:80] + " ..." if len(
@@ -126,48 +191,6 @@ class Answer(models.Model):
         verbose_name = _('answer')
         verbose_name_plural = _('answers')
 
-
-class PartyInline(admin.TabularInline):
-    model = Party
-
-
-class ThesisInline(TranslationTabularInline):
-    model = Thesis
-
-
-class AnswerInline(TranslationTabularInline):
-    model = Answer
-
-
-class ElectionAdmin(TranslationAdmin):
-    inlines = [PartyInline, ThesisInline, AnswerInline]
-
-
-class PartyAdmin(admin.ModelAdmin):
-    list_display = (
-        'election',
-        'short_name',
-    )
-    list_display_links = ('short_name', )
-
-
-class ThesisAdmin(TranslationAdmin):
-    list_display = (
-        'election',
-        'topic',
-    )
-    list_display_links = ('topic', )
-
-
-class AnswerAdmin(TranslationAdmin):
-    list_display = (
-        'election',
-        'party',
-        'thesis',
-        'short_reasoning',
-        'stance',
-    )
-    list_display_links = (
-        'short_reasoning',
-        'stance',
-    )
+        unique_together = (
+            ('party', 'thesis', 'stance'),
+        )
