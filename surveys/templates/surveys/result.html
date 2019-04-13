@@ -3,14 +3,6 @@
 {% load static %}
 {% load i18n %}
 
-{% block change_lang %}
-{% if lang_code == 'en' %}
-<a href="/de/result/"><img src="{% static 'de.png' %}" width="32" height="16" style="float: right;" /></a>
-{% else %}
-<a href="/en/result/"><img src="{% static 'en.png' %}" width="32" height="16" style="float: right;" /></a>
-{% endif %}
-{% endblock %}
-
 {% block subtitle %}
 {{ election.title }}
 {% endblock %}

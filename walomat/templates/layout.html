@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load i18_urls %}
 
 {% get_current_language as lang_code %}
 
@@ -9,12 +10,17 @@
 		<meta charset="utf-8">
 		<title>Wal-O-Mat</title>
 		<link href="{% static 'style.css' %}" rel="stylesheet">
-        <link rel="shortcut icon" href="{%  static 'whales/spouting-whale-16x16.png' %}">
+		<link rel="shortcut icon" href="{%  static 'whales/spouting-whale-32x32.png' %}">
 	</head>
 	<body>
 		<main>
 			<header>
-				{% block change_lang %}{% endblock %}
+				{% get_available_languages as languages %}
+				{% for lang, name in languages %}
+				{% if lang != lang_code %}
+				<a href="{% change_lang lang %}"><img src="{% static ''|add:lang|add:'.png' %}" width="32" height="16" style="float: right;" /></a>
+				{% endif %}
+				{% endfor %}
 
 				<h1>Wal-O-Mat 🐋</h1>
 				<h2>{% block subtitle %}{% endblock %}</h2>

@@ -3,14 +3,6 @@
 {% load static %}
 {% load i18n %}
 
-{% block change_lang %}
-{% if lang_code == 'en' %}
-<a href="/de/{{ thesis.id }}"><img src="{% static 'de.png' %}" width="32" height="16" style="float: right;" /></a>
-{% else %}
-<a href="/en/{{ thesis.id }}"><img src="{% static 'en.png' %}" width="32" height="16" style="float: right;" /></a>
-{% endif %}
-{% endblock %}
-
 {% block subtitle %}
 {{ election.title }}
 {% endblock %}
@@ -24,7 +16,7 @@
 
 		<ul>
 			{% for a, b in stances %}
-			<li><a href="/{{ lang_code }}/{{ thesis.id }}/{{ a }}/">{{ b }}</a></li>
+			<li><a href="{% url 'stance' thesis.id a %}">{{ b }}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
@@ -32,7 +24,7 @@
 	<nav>
 		<ul>
 			{% for thesis in theses %}
-			<li><a href="/{{ lang_code }}/{{ thesis.id }}/"><span style="{% ifequal thesis.id thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
+			<li><a href="{% url 'thesis' thesis.id %}"><span style="{% ifequal thesis.id thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
 			{% endfor %}
 		</ul>
 	</nav>
