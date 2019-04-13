@@ -1,0 +1,12 @@
+[flake8]
+ignore =
+    # None
+
+exclude =
+    .git,
+    __pycache__,
+    manage.py,
+    migrations,
+    resources,
+    static,
+    settings.py

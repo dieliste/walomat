@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-10 18:19+0200\n"
+"POT-Creation-Date: 2019-04-11 15:41+0000\n"
 "PO-Revision-Date: 2019-04-05 13:15+0200\n"
 "Last-Translator: Simon Ellmann <simon.ellmann@tum.de>\n"
 "Language-Team: NOREPLY <noreply@liste.party>\n"
@@ -30,7 +30,7 @@ msgstr "Zugänglich von"
 msgid "accessible to"
 msgstr "Zugänglich bis"
 
-#: models.py:36 models.py:42 models.py:72 models.py:103
+#: models.py:36 models.py:42 models.py:73 models.py:104
 msgid "election"
 msgstr "Wahl"
 
@@ -50,75 +50,87 @@ msgstr "Vollständiger Name"
 msgid "image"
 msgstr "Bild"
 
-#: models.py:66 models.py:106
+#: models.py:67 models.py:107
 msgid "party"
 msgstr "Liste"
 
-#: models.py:67
+#: models.py:68
 msgid "parties"
 msgstr "Listen"
 
-#: models.py:74
+#: models.py:75
 msgid "topic"
 msgstr "Thema"
 
-#: models.py:75
+#: models.py:76
 msgid "text"
 msgstr "Text"
 
-#: models.py:88 models.py:109
+#: models.py:89 models.py:110
 msgid "thesis"
 msgstr "These"
 
-#: models.py:89
+#: models.py:90
 msgid "theses"
 msgstr "Thesen"
 
-#: models.py:97
+#: models.py:98
 msgid "agree"
 msgstr "stimme zu"
 
-#: models.py:98
+#: models.py:99
 msgid "neutral"
 msgstr "neutral"
 
-#: models.py:99
+#: models.py:100
 msgid "disagree"
 msgstr "stimme nicht zu"
 
-#: models.py:111
+#: models.py:112
 msgid "stance"
 msgstr "Standpunkt"
 
-#: models.py:114
+#: models.py:115
 msgid "reasoning"
 msgstr "Begründung"
 
-#: models.py:118
+#: models.py:119
 msgid "{} on {}: {}"
 msgstr "{} zu {}: {}"
 
-#: models.py:125
+#: models.py:126
 msgid "answer"
 msgstr "Antwort"
 
-#: models.py:126
+#: models.py:127
 msgid "answers"
 msgstr "Antworten"
 
 #: templates/surveys/index.html:19
-msgid "Welcome to the Wal-O-Mat 🐳"
-msgstr "Willkommen beim Wal-O-Mat 🐳"
+msgid "Welcome to the independent Wal-O-Mat."
+msgstr "Willkommen beim Wal-O-Mat"
 
 #: templates/surveys/index.html:21
-msgid "Thousands of lists have answered thousands of questions."
-msgstr "Tausende Listen haben tausende Fragen beantwortet."
+msgid ""
+"This Wal-O-Mat is dedicated to inform you about the student elections 2019 "
+"in the department of Informatics."
+msgstr ""
+"Dieser Wal-O-Mat informiert dich über die Hochschulwahl 2019 in der Fakultät "
+"Informatik."
 
 #: templates/surveys/index.html:23
-msgid "Find out which Wal-list is your favorite."
-msgstr "Finde heraus welche Wal-Liste deine Lieblingsliste ist."
+msgid "The participating parties are RCDS, LitFaS and Die LISTE."
+msgstr "Die teilnehmenden Listen sind der RCDS, die LitFaS und Die LISTE."
 
-#: templates/surveys/index.html:28
+#: templates/surveys/index.html:25
+msgid ""
+"Click through the questions. At the end you will see a comparison between "
+"you and the answers of the parties."
+msgstr ""
+"Klick dich durch die einzelnen Fragen. Am Ende wirst du einen Vergleich "
+"zwischen deinen und den Antworten der Listen erhalten."
+
+#: templates/surveys/index.html:30
 msgid "There is currently no election."
 msgstr "Zur Zeit gibt es keine Wahl."
 

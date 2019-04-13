@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse, resolve
 from django.utils import translation
-# from .models import Election, Party
 from .views import index, thesis
 
 
