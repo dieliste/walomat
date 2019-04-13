@@ -73,7 +73,6 @@
     "model": "surveys.answer",
     "pk": 1,
     "fields": {
-        "election": 1,
         "party": 1,
         "thesis": 1,
         "stance": "1",
@@ -86,7 +85,6 @@
     "model": "surveys.answer",
     "pk": 2,
     "fields": {
-        "election": 1,
         "party": 1,
         "thesis": 2,
         "stance": "1",
@@ -99,7 +97,6 @@
     "model": "surveys.answer",
     "pk": 3,
     "fields": {
-        "election": 1,
         "party": 1,
         "thesis": 3,
         "stance": "3",
@@ -112,7 +109,6 @@
     "model": "surveys.answer",
     "pk": 4,
     "fields": {
-        "election": 1,
         "party": 2,
         "thesis": 1,
         "stance": "3",
@@ -125,7 +121,6 @@
     "model": "surveys.answer",
     "pk": 5,
     "fields": {
-        "election": 1,
         "party": 2,
         "thesis": 2,
         "stance": "2",
@@ -138,7 +133,6 @@
     "model": "surveys.answer",
     "pk": 6,
     "fields": {
-        "election": 1,
         "party": 2,
         "thesis": 3,
         "stance": "1",
