@@ -1,0 +1,144 @@
+[
+{
+    "model": "surveys.election",
+    "pk": 1,
+    "fields": {
+        "title": "Qualityland Wahl 2020",
+        "title_de": "Qualityland Wahl 2020",
+        "title_en": "2020 Qualityland Election",
+        "accessible_from": "2019-04-11T14:57:09Z",
+        "accessible_to": "2020-12-26T14:57:09Z"
+    }
+},
+{
+    "model": "surveys.party",
+    "pk": 1,
+    "fields": {
+        "election": 1,
+        "short_name": "DFP",
+        "full_name": "Die Fortschrittspartei",
+        "image": ""
+    }
+},
+{
+    "model": "surveys.party",
+    "pk": 2,
+    "fields": {
+        "election": 1,
+        "short_name": "DQP",
+        "full_name": "Die Qualit\u00e4tspartei",
+        "image": ""
+    }
+},
+{
+    "model": "surveys.thesis",
+    "pk": 1,
+    "fields": {
+        "election": 1,
+        "topic": "Totale \u00dcberwachung",
+        "topic_de": "Totale \u00dcberwachung",
+        "topic_en": "Total surveillance",
+        "thesis": "Wollt ihr die TOTALE \u00dcberwachung?",
+        "thesis_de": "Wollt ihr die TOTALE \u00dcberwachung?",
+        "thesis_en": "Do you want MASS surveillance?"
+    }
+},
+{
+    "model": "surveys.thesis",
+    "pk": 2,
+    "fields": {
+        "election": 1,
+        "topic": "Arbeit",
+        "topic_de": "Arbeit",
+        "topic_en": "Employment",
+        "thesis": "Wollt ihr die TOTALE Besch\u00e4ftigungsrate?",
+        "thesis_de": "Wollt ihr die TOTALE Besch\u00e4ftigungsrate?",
+        "thesis_en": "Do you want MASS emplyment?"
+    }
+},
+{
+    "model": "surveys.thesis",
+    "pk": 3,
+    "fields": {
+        "election": 1,
+        "topic": "Geld",
+        "topic_de": "Geld",
+        "topic_en": "Money",
+        "thesis": "Wollt ihr MEHR Geld f\u00fcr alle?",
+        "thesis_de": "Wollt ihr MEHR Geld f\u00fcr alle?",
+        "thesis_en": "Do you want MORE money?"
+    }
+},
+{
+    "model": "surveys.answer",
+    "pk": 1,
+    "fields": {
+        "party": 1,
+        "thesis": 1,
+        "stance": "1",
+        "reasoning": "Wir wollen \u00dcberwachung f\u00fcr jeden! Kriminalit\u00e4tsrate von 0%!",
+        "reasoning_de": "Wir wollen \u00dcberwachung f\u00fcr jeden! Kriminalit\u00e4tsrate von 0%!",
+        "reasoning_en": "We want mass surveillance! No more criminals!"
+    }
+},
+{
+    "model": "surveys.answer",
+    "pk": 2,
+    "fields": {
+        "party": 1,
+        "thesis": 2,
+        "stance": "1",
+        "reasoning": "Wir wollen Arbeit f\u00fcr jeden! Niemand soll mehr nicht arbeiten! Keine Nutzlosen f\u00fcr Qualityland!",
+        "reasoning_de": "Wir wollen Arbeit f\u00fcr jeden! Niemand soll mehr nicht arbeiten! Keine Nutzlosen f\u00fcr Qualityland!",
+        "reasoning_en": "We want employment for everyone! No one likes the job- and useless riffraff!"
+    }
+},
+{
+    "model": "surveys.answer",
+    "pk": 3,
+    "fields": {
+        "party": 1,
+        "thesis": 3,
+        "stance": "3",
+        "reasoning": "Wir wollen, dass das Geld den Reichen geh\u00f6rt! Davon profitieren alle!",
+        "reasoning_de": "Wir wollen, dass das Geld den Reichen geh\u00f6rt! Davon profitieren alle!",
+        "reasoning_en": "All the money should belong to the rich! Everyone benefits therefrom!"
+    }
+},
+{
+    "model": "surveys.answer",
+    "pk": 4,
+    "fields": {
+        "party": 2,
+        "thesis": 1,
+        "stance": "3",
+        "reasoning": "Wir wollen keine \u00dcberwachung, keine Macht f\u00fcr Niemand!",
+        "reasoning_de": "Wir wollen keine \u00dcberwachung, keine Macht f\u00fcr Niemand!",
+        "reasoning_en": "We do not want mass surveillance! No power for nobody!"
+    }
+},
+{
+    "model": "surveys.answer",
+    "pk": 5,
+    "fields": {
+        "party": 2,
+        "thesis": 2,
+        "stance": "2",
+        "reasoning": "Die 0% Arbeitlosenquote ist eine Utopie! Wir wollen der zunehmenden Digitalisierung mit besseren Arbeitsbedingungen begegnen!",
+        "reasoning_de": "Die 0% Arbeitlosenquote ist eine Utopie! Wir wollen der zunehmenden Digitalisierung mit besseren Arbeitsbedingungen begegnen!",
+        "reasoning_en": "The 0% unemployment rate is just not realistic! We want better working conditions."
+    }
+},
+{
+    "model": "surveys.answer",
+    "pk": 6,
+    "fields": {
+        "party": 2,
+        "thesis": 3,
+        "stance": "1",
+        "reasoning": "Unsere Gesellschaft ist tief gespalten. Wir wollen eine funktionierende Umverteilung von Verm\u00f6gen!",
+        "reasoning_de": "Unsere Gesellschaft ist tief gespalten. Wir wollen eine funktionierende Umverteilung von Verm\u00f6gen!",
+        "reasoning_en": "Our society is deeply divided. We want a working redistribution of wealth!"
+    }
+}
+]
