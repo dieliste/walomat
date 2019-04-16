@@ -18,11 +18,11 @@
 				{% get_available_languages as languages %}
 				{% for lang, name in languages %}
 				{% if lang != lang_code %}
-				<a href="{% change_lang lang %}"><img src="{% static ''|add:lang|add:'.png' %}" width="32" height="16" style="float: right;" /></a>
+				<a href="{% change_lang lang %}"><img class="lang" src="{% static lang|add:'.png' %}" /></a>
 				{% endif %}
 				{% endfor %}
 
-				<h1>Wal-O-Mat 🐋</h1>
+				<a href="{% url 'index' %}"><h1>Wal-O-Mat 🐋</h1></a>
 				<h2>{% block subtitle %}{% endblock %}</h2>
 			</header>
 
@@ -30,7 +30,6 @@
 				{% block content %}
 				{% endblock %}
 			</div>
-
 		</main>
 	</body>
 </html>
