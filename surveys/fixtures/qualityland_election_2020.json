@@ -7,7 +7,8 @@
         "title_de": "Qualityland Wahl 2020",
         "title_en": "2020 Qualityland Election",
         "accessible_from": "2019-04-11T14:57:09Z",
-        "accessible_to": "2020-12-26T14:57:09Z"
+        "accessible_to": "2020-12-26T14:57:09Z",
+	"slug": "qualityland-wahl-2020"
     }
 },
 {
@@ -75,7 +76,7 @@
     "fields": {
         "party": 1,
         "thesis": 1,
-        "stance": "1",
+        "stance": 1,
         "reasoning": "Wir wollen \u00dcberwachung f\u00fcr jeden! Kriminalit\u00e4tsrate von 0%!",
         "reasoning_de": "Wir wollen \u00dcberwachung f\u00fcr jeden! Kriminalit\u00e4tsrate von 0%!",
         "reasoning_en": "We want mass surveillance! No more criminals!"
@@ -87,7 +88,7 @@
     "fields": {
         "party": 1,
         "thesis": 2,
-        "stance": "1",
+        "stance": 1,
         "reasoning": "Wir wollen Arbeit f\u00fcr jeden! Niemand soll mehr nicht arbeiten! Keine Nutzlosen f\u00fcr Qualityland!",
         "reasoning_de": "Wir wollen Arbeit f\u00fcr jeden! Niemand soll mehr nicht arbeiten! Keine Nutzlosen f\u00fcr Qualityland!",
         "reasoning_en": "We want employment for everyone! No one likes the job- and useless riffraff!"
@@ -99,7 +100,7 @@
     "fields": {
         "party": 1,
         "thesis": 3,
-        "stance": "3",
+        "stance": 3,
         "reasoning": "Wir wollen, dass das Geld den Reichen geh\u00f6rt! Davon profitieren alle!",
         "reasoning_de": "Wir wollen, dass das Geld den Reichen geh\u00f6rt! Davon profitieren alle!",
         "reasoning_en": "All the money should belong to the rich! Everyone benefits therefrom!"
@@ -111,7 +112,7 @@
     "fields": {
         "party": 2,
         "thesis": 1,
-        "stance": "3",
+        "stance": 3,
         "reasoning": "Wir wollen keine \u00dcberwachung, keine Macht f\u00fcr Niemand!",
         "reasoning_de": "Wir wollen keine \u00dcberwachung, keine Macht f\u00fcr Niemand!",
         "reasoning_en": "We do not want mass surveillance! No power for nobody!"
@@ -123,7 +124,7 @@
     "fields": {
         "party": 2,
         "thesis": 2,
-        "stance": "2",
+        "stance": 2,
         "reasoning": "Die 0% Arbeitlosenquote ist eine Utopie! Wir wollen der zunehmenden Digitalisierung mit besseren Arbeitsbedingungen begegnen!",
         "reasoning_de": "Die 0% Arbeitlosenquote ist eine Utopie! Wir wollen der zunehmenden Digitalisierung mit besseren Arbeitsbedingungen begegnen!",
         "reasoning_en": "The 0% unemployment rate is just not realistic! We want better working conditions."
@@ -135,7 +136,7 @@
     "fields": {
         "party": 2,
         "thesis": 3,
-        "stance": "1",
+        "stance": 1,
         "reasoning": "Unsere Gesellschaft ist tief gespalten. Wir wollen eine funktionierende Umverteilung von Verm\u00f6gen!",
         "reasoning_de": "Unsere Gesellschaft ist tief gespalten. Wir wollen eine funktionierende Umverteilung von Verm\u00f6gen!",
         "reasoning_en": "Our society is deeply divided. We want a working redistribution of wealth!"

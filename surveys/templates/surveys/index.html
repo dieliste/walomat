@@ -16,9 +16,14 @@
 
 <p>{% trans 'Click through the questions. At the end you will see a comparison between you and the answers of the parties.' %}</p>
 
-{% if first_thesis_id %}
-<a href="{% url 'thesis' first_thesis_id %}">Start</a>
+{% if election_thesis %}
+<p>{% trans 'Elections:' %}</p>
+<ul>
+	{% for election, thesis in election_thesis %}
+	<li><a href="{% url 'thesis_detail' election.slug 1 %}">{{ election.title }}</a></li>
+	{% endfor %}
+</ul>
 {% else %}
-{% trans 'There is currently no election.' %}
+{% trans 'There are currently no elections.' %}
 {% endif %}
 {% endblock %}

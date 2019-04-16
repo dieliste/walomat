@@ -1,5 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 
@@ -26,24 +27,32 @@ class Election(models.Model):
         default=timezone.now
     )
 
+    slug = models.SlugField(unique=True, allow_unicode=True)
+
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def is_active(self):
+        return self.accessible_from <= timezone.now(
+        ) and self.accessible_to >= timezone.now()
+
     @staticmethod
-    def get_current():
+    def active_elections():
         return Election.objects.filter(
             accessible_from__lt=timezone.now(),
             accessible_to__gt=timezone.now()
-        ).first()
+        )
 
-    def first_thesis(self):
-        return self.thesis_set.all().first()
-
-    def all_theses(self):
-        return self.thesis_set.all()
-
-    def all_parties(self):
-        return self.party_set.all()
+    def nth_thesis(self, thesis_no):
+        theses = self.thesis_set.all().order_by('id')
+        if len(theses) >= thesis_no > 0:
+            return theses[thesis_no - 1]
+        else:
+            return None
 
     class Meta:
         verbose_name = _('election')
@@ -63,6 +72,7 @@ class Party(models.Model):
 
     short_name = models.CharField(
         _('short name'),
+        unique=True,
         max_length=127
     )
 
@@ -89,9 +99,6 @@ class Party(models.Model):
             output_size = (200, 200)
             img.thumbnail(output_size)
             img.save(self.image.path)
-
-    def all_answers(self):
-        return self.answer_set.all()
 
     class Meta:
         verbose_name = _('party')
@@ -121,13 +128,6 @@ class Thesis(models.Model):
     def __str__(self):
         return self.topic
 
-    def next(self):
-        return self.election.thesis_set.filter(
-            id__gt=self.id).order_by('id').first()
-
-    def position(self):
-        return self.election.thesis_set.filter(id__lte=self.id).count()
-
     class Meta:
         verbose_name = _('thesis')
         verbose_name_plural = _('theses')
@@ -138,13 +138,13 @@ class Answer(models.Model):
     The answer of one party to a thesis
     """
 
-    STANCE_PRO = '1'
-    STANCE_NEUTRAL = '2'
-    STANCE_AGAINST = '3'
+    STANCE_PRO = 1
+    STANCE_NEUTRAL = 2
+    STANCE_CONTRA = 3
     STANCE_OPTIONS = (
         (STANCE_PRO, _('agree')),
         (STANCE_NEUTRAL, _('neutral')),
-        (STANCE_AGAINST, _('disagree')),
+        (STANCE_CONTRA, _('disagree')),
     )
 
     party = models.ForeignKey(
@@ -159,10 +159,9 @@ class Answer(models.Model):
         on_delete=models.CASCADE
     )
 
-    stance = models.CharField(
+    stance = models.IntegerField(
         _('stance'),
-        max_length=1,
-        choices=STANCE_OPTIONS
+        choices=STANCE_OPTIONS,
     )
 
     reasoning = models.TextField(

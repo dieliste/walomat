@@ -17,7 +17,14 @@ class AnswerInline(TranslationTabularInline):
 
 
 class ElectionAdmin(TranslationAdmin):
+    prepopulated_fields = {"slug": ("title",)}
     inlines = [PartyInline, ThesisInline]
+
+    list_display = (
+        'title',
+        'accessible_from',
+        'accessible_to',
+    )
 
 
 class PartyAdmin(admin.ModelAdmin):

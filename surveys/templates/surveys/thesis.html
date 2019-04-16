@@ -16,7 +16,7 @@
 
 		<ul>
 			{% for a, b in stances %}
-			<li><a href="{% url 'stance' thesis.id a %}">{{ b }}</a></li>
+			<li><a href="{% url 'stance_detail' election.slug thesis.id a %}">{{ b }}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
@@ -24,7 +24,7 @@
 	<nav>
 		<ul>
 			{% for thesis in theses %}
-			<li><a href="{% url 'thesis' thesis.id %}"><span style="{% ifequal thesis.id thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
+			<li><a href="{% url 'thesis_detail' election.slug thesis.id %}"><span style="{% ifequal thesis.id thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
 			{% endfor %}
 		</ul>
 	</nav>
