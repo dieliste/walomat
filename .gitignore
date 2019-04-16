@@ -1,3 +1,6 @@
+# Django project specific stuff
+uploads/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
