@@ -24,3 +24,13 @@ def change_lang(context, lang=None, *args, **kwargs):
         activate(cur_language)
 
     return "%s" % url
+
+
+@register.filter
+def create_range(min, max):
+    """
+    Create a range from min to max
+    Usage: {% for val in 0|to_range:5 %}
+    """
+
+    return range(min, max)

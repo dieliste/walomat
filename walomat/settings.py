@@ -72,7 +72,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries': {
-                'i18_urls': 'walomat.templates.i18_urls',
+                'tags': 'walomat.templates.tags',
             }
         },
     },

@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load i18n %}
+{% load tags %}
 
 {% block subtitle %}
 {{ election.title }}
@@ -15,17 +16,19 @@
 		<p>{{ thesis.thesis }}</p>
 
 		<ul>
-			{% for a, b in stances %}
-			<li><a href="{% url 'stance_detail' election.slug thesis.id a %}">{{ b }}</a></li>
+			{% for stance_val, stance_desc in stances %}
+			<li><a href="{% url 'stance_detail' election.slug thesis_no stance_val %}">{{ stance_desc }}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
 
 	<nav>
 		<ul>
-			{% for thesis in theses %}
-			<li><a href="{% url 'thesis_detail' election.slug thesis.id %}"><span style="{% ifequal thesis.id thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
+			{% with theses|length as n %}
+			{% for value in 0|create_range:n %}
+			<li><a href="{% url 'thesis_detail' election.slug forloop.counter %}"><span style="{% ifequal forloop.counter thesis_no %} background-color: black{% endifequal %}">&nbsp;</span></a></li>
 			{% endfor %}
+			{% endwith %}
 		</ul>
 	</nav>
 </div>
