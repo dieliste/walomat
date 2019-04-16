@@ -10,4 +10,5 @@ urlpatterns = [
          views.stance_detail,
          name='stance_detail'),
     path('<slug:slug>/result/', views.result_index, name='result_index'),
+    path('<slug:slug>/generate_pdf/', views.theses_pdf, name='theses_pdf'),
 ]

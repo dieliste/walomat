@@ -1,3 +1,4 @@
 django ~= 2.2
 django-modeltranslation ~= 0.13
 pillow ~= 6.0.0
+reportlab ~= 3.5.19
