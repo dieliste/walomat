@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-16 10:01+0200\n"
+"POT-Creation-Date: 2019-04-16 13:29+0200\n"
 "PO-Revision-Date: 2019-04-05 13:15+0200\n"
 "Last-Translator: Simon Ellmann <simon.ellmann@tum.de>\n"
 "Language-Team: NOREPLY <noreply@liste.party>\n"
@@ -30,79 +30,83 @@ msgstr "Zugänglich von"
 msgid "accessible to"
 msgstr "Zugänglich bis"
 
-#: models.py:70 models.py:81 models.py:129
+#: models.py:58 models.py:69 models.py:115
 msgid "election"
 msgstr "Wahl"
 
-#: models.py:71
+#: models.py:59
 msgid "elections"
 msgstr "Wahlen"
 
-#: models.py:86
+#: models.py:74
 msgid "short name"
 msgstr "Kurzbezeichnung"
 
-#: models.py:91
+#: models.py:80
 msgid "full name"
 msgstr "Vollständiger Name"
 
-#: models.py:96
+#: models.py:85
 msgid "image"
 msgstr "Bild"
 
-#: models.py:118 models.py:173
+#: models.py:104 models.py:152
 msgid "party"
 msgstr "Liste"
 
-#: models.py:119
+#: models.py:105
 msgid "parties"
 msgstr "Listen"
 
-#: models.py:134
+#: models.py:120
 msgid "topic"
 msgstr "Thema"
 
-#: models.py:139
+#: models.py:125
 msgid "text"
 msgstr "Text"
 
-#: models.py:153 models.py:179
+#: models.py:132 models.py:158
 msgid "thesis"
 msgstr "These"
 
-#: models.py:154
+#: models.py:133
 msgid "theses"
 msgstr "Thesen"
 
-#: models.py:166
+#: models.py:145
 msgid "agree"
 msgstr "stimme zu"
 
-#: models.py:167
+#: models.py:146
 msgid "neutral"
 msgstr "neutral"
 
-#: models.py:168
+#: models.py:147
 msgid "disagree"
 msgstr "stimme nicht zu"
 
-#: models.py:184
+#: models.py:163
 msgid "stance"
 msgstr "Standpunkt"
 
-#: models.py:190
+#: models.py:168
 msgid "reasoning"
 msgstr "Begründung"
 
-#: models.py:195
+#: models.py:173
 msgid "{} on {}: {}"
 msgstr "{} zu {}: {}"
 
-#: models.py:211
+#: models.py:188
+msgid "short reasoning"
+msgstr "Kurzbegründung"
+
+#: models.py:191
 msgid "answer"
 msgstr "Antwort"
 
-#: models.py:212
+#: models.py:192
 msgid "answers"
 msgstr "Antworten"
 

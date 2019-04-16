@@ -185,6 +185,8 @@ class Answer(models.Model):
         return self.reasoning[:80] + " ..." if len(
             self.reasoning) > 80 else self.reasoning
 
+    short_reasoning.short_description = _("short reasoning")
+
     class Meta:
         verbose_name = _('answer')
         verbose_name_plural = _('answers')
