@@ -2,9 +2,22 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext
 from django.utils import timezone
 
 from PIL import Image
+from .singleton import SingletonModel
+
+
+class SiteSettings(SingletonModel):
+    welcome_text = models.TextField(_('welcome text'), default='Hello!')
+
+    def __str__(self):
+        return gettext('Settings')
+
+    class Meta:
+        verbose_name = _('site settings')
+        verbose_name_plural = _('site settings')
 
 
 class Election(models.Model):

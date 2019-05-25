@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 
-from .models import Election, Party, Thesis, Answer
+from .models import SiteSettings, Election, Party, Thesis, Answer
 
 
 class PartyInline(admin.TabularInline):
@@ -14,6 +14,10 @@ class ThesisInline(TranslationTabularInline):
 
 class AnswerInline(TranslationTabularInline):
     model = Answer
+
+
+class SiteSettingsAdmin(TranslationAdmin):
+    pass
 
 
 class ElectionAdmin(TranslationAdmin):
@@ -59,6 +63,7 @@ class AnswerAdmin(TranslationAdmin):
     )
 
 
+admin.site.register(SiteSettings, SiteSettingsAdmin)
 admin.site.register(Election, ElectionAdmin)
 admin.site.register(Party, PartyAdmin)
 admin.site.register(Thesis, ThesisAdmin)

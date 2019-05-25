@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-16 13:29+0200\n"
+"POT-Creation-Date: 2019-05-25 19:13+0200\n"
 "PO-Revision-Date: 2019-04-05 13:15+0200\n"
 "Last-Translator: Simon Ellmann <simon.ellmann@tum.de>\n"
 "Language-Team: NOREPLY <noreply@liste.party>\n"
@@ -18,95 +18,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: models.py:13
+msgid "welcome text"
+msgstr "Begrüßungstext"
+
 #: models.py:16
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: models.py:19 models.py:20
+msgid "site settings"
+msgstr "Seiteneinstellungen"
+
+#: models.py:29
 msgid "title"
 msgstr "Titel"
 
-#: models.py:21
+#: models.py:34
 msgid "accessible from"
 msgstr "Zugänglich von"
 
-#: models.py:26
+#: models.py:39
 msgid "accessible to"
 msgstr "Zugänglich bis"
 
-#: models.py:58 models.py:69 models.py:115
+#: models.py:71 models.py:82 models.py:128
 msgid "election"
 msgstr "Wahl"
 
-#: models.py:59
+#: models.py:72
 msgid "elections"
 msgstr "Wahlen"
 
-#: models.py:74
+#: models.py:87
 msgid "short name"
 msgstr "Kurzbezeichnung"
 
-#: models.py:80
+#: models.py:93
 msgid "full name"
 msgstr "Vollständiger Name"
 
-#: models.py:85
+#: models.py:98
 msgid "image"
 msgstr "Bild"
 
-#: models.py:104 models.py:152
+#: models.py:117 models.py:165
 msgid "party"
 msgstr "Liste"
 
-#: models.py:105
+#: models.py:118
 msgid "parties"
 msgstr "Listen"
 
-#: models.py:120
+#: models.py:133
 msgid "topic"
 msgstr "Thema"
 
-#: models.py:125
+#: models.py:138
 msgid "text"
 msgstr "Text"
 
-#: models.py:132 models.py:158
+#: models.py:145 models.py:171
 msgid "thesis"
 msgstr "These"
 
-#: models.py:133
+#: models.py:146
 msgid "theses"
 msgstr "Thesen"
 
-#: models.py:145
+#: models.py:158
 msgid "agree"
 msgstr "stimme zu"
 
-#: models.py:146
+#: models.py:159
 msgid "neutral"
 msgstr "neutral"
 
-#: models.py:147
+#: models.py:160
 msgid "disagree"
 msgstr "stimme nicht zu"
 
-#: models.py:163
+#: models.py:176
 msgid "stance"
 msgstr "Standpunkt"
 
-#: models.py:168
+#: models.py:181
 msgid "reasoning"
 msgstr "Begründung"
 
-#: models.py:173
+#: models.py:186
 msgid "{} on {}: {}"
 msgstr "{} zu {}: {}"
 
-#: models.py:188
+#: models.py:201
 msgid "short reasoning"
 msgstr "Kurzbegründung"
 
-#: models.py:191
+#: models.py:204
 msgid "answer"
 msgstr "Antwort"
 
-#: models.py:192
+#: models.py:205
 msgid "answers"
 msgstr "Antworten"
 
@@ -114,31 +126,11 @@ msgstr "Antworten"
 msgid "Welcome to the independent Wal-O-Mat."
 msgstr "Willkommen beim Wal-O-Mat"
 
-#: templates/surveys/index.html:13
-msgid ""
-"This Wal-O-Mat is dedicated to inform you about the student elections 2019 "
-"in the department of Informatics."
-msgstr ""
-"Dieser Wal-O-Mat informiert dich über die Hochschulwahl 2019 in der Fakultät "
-"Informatik."
-
-#: templates/surveys/index.html:15
-msgid "The participating parties are RCDS, LitFaS and Die LISTE."
-msgstr "Die teilnehmenden Listen sind der RCDS, die LitFaS und Die LISTE."
-
-#: templates/surveys/index.html:17
-msgid ""
-"Click through the questions. At the end you will see a comparison between "
-"you and the answers of the parties."
-msgstr ""
-"Klick dich durch die einzelnen Fragen. Am Ende wirst du einen Vergleich "
-"zwischen deinen und den Antworten der Listen erhalten."
-
-#: templates/surveys/index.html:20
+#: templates/surveys/index.html:16
 msgid "Elections:"
 msgstr "Wahlen:"
 
-#: templates/surveys/index.html:27
+#: templates/surveys/index.html:23
 msgid "There are currently no elections."
 msgstr "Zur Zeit gibt es keine Wahlen."
 

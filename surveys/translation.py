@@ -1,5 +1,10 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Election, Thesis, Answer
+from .models import SiteSettings, Election, Thesis, Answer
+
+
+@register(SiteSettings)
+class SiteSettingsTranslationOptions(TranslationOptions):
+    fields = ('welcome_text', )
 
 
 @register(Election)
