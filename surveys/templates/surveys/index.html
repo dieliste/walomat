@@ -3,11 +3,8 @@
 {% load static %}
 {% load i18n %}
 
-{% block subtitle %}
-{{ election.title }}
-{% endblock %}
-
 {% block content %}
+<div class="main">
 <h3>{% trans 'Welcome to the independent Wal-O-Mat.' %}</h3>
 
 {{ settings.welcome_text|linebreaks }}
@@ -16,10 +13,11 @@
 <p>{% trans 'Elections:' %}</p>
 <ul>
 	{% for election, thesis in election_thesis %}
-	<li><a href="{% url 'thesis_detail' election.slug 1 %}">{{ election.title }}</a></li>
+	<li><a href="{% url 'thesis_detail' election.slug 1 %}"><button>{{ election.title }}</button></a></li>
 	{% endfor %}
 </ul>
 {% else %}
 {% trans 'There are currently no elections.' %}
 {% endif %}
+</div>
 {% endblock %}
