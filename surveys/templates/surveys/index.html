@@ -10,7 +10,6 @@
 {{ settings.welcome_text|linebreaks }}
 
 {% if election_thesis %}
-<p>{% trans 'Elections:' %}</p>
 <ul>
 	{% for election, thesis in election_thesis %}
 	<li><a href="{% url 'thesis_detail' election.slug 1 %}"><button>{{ election.title }}</button></a></li>
