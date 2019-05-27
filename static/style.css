@@ -79,6 +79,7 @@ main img.lang {
 	height: 16px;
 	float: right;
 	padding-left: 6px;
+	padding-bottom: 20px;
 }
 
 main header h1 span {
