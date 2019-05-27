@@ -85,7 +85,6 @@ class Party(models.Model):
 
     short_name = models.CharField(
         _('short name'),
-        unique=True,
         max_length=127
     )
 
@@ -116,6 +115,11 @@ class Party(models.Model):
     class Meta:
         verbose_name = _('party')
         verbose_name_plural = _('parties')
+
+        unique_together = (
+            ('election', 'short_name'),
+            ('election', 'full_name'),
+        )
 
 
 class Thesis(models.Model):
