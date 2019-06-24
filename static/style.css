@@ -242,6 +242,13 @@ div.result table.conformance {
 	margin: 10px 0 30px 0;
 }
 
+
+div.result table.conformance tr:first-child td:first-child {
+	color: gold;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
 div.result table.conformance tr td:first-child {
 	width: 1%;
 	padding-right: 30px;
@@ -250,7 +257,6 @@ div.result table.conformance tr td:first-child {
 
 div.result table.conformance tr td:nth-child(2) {
 	padding: 0;
-	background-color: #eee;
 }
 
 div.result table.conformance tr td:nth-child(2) div {

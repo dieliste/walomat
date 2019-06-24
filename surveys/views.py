@@ -1,5 +1,7 @@
 from django.http import Http404, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from csp.decorators import csp_update
+
 
 from io import BytesIO
 from reportlab.pdfgen import canvas
@@ -69,7 +71,7 @@ def stance_detail(request, slug, thesis_no, stance_id):
 
     return redirect(index)
 
-
+@csp_update(STYLE_SRC=["'unsafe-inline'", "'self'"])
 def result_index(request, slug):
     election = get_object_or_404(Election, slug=slug)
 

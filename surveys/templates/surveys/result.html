@@ -12,11 +12,11 @@
 	<h3>{% trans 'Evaluation' %}</h3>
 
 	<table class="conformance">
-		{% for party, percent in conformance.items %}
+		{% for party, percent in conformance.items|dictsortreversed:1 %}
 		<tr>
 			<td>{{ party }}</td>
 			<td>
-				<div style="width:{{ percent|floatformat:0 }}%;">{{ percent|floatformat:2 }} %</div>
+				<div style="width:{{ percent|floatformat:0 }}%;background-color:white;">{{ percent|floatformat:2 }} %</div>
 			</td>
 		</tr>
 		{% endfor %}
