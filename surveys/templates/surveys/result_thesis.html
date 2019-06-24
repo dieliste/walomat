@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load tags %}
+
+{% block subtitle %}
+{{ election.title }}
+{% endblock %}
+
+{% block content %}
+<div class="thesis">
+	<div>
+		<h3>{{ thesis_no }}/{{ theses|length }} {{ thesis.topic }}</h3>
+
+		<p>{{ thesis.thesis }}</p>
+
+		{% if next_thesis %}
+		<ul>
+			<li><a href="{% url 'result_detail' election.slug thesis_no|add:1 %}"><button>{% trans 'Next thesis' %}</button></a></li>
+		</ul>
+		{% endif %}
+	</div>
+		{% if position == 1 %}
+		<h3>{% trans 'Your stance' %}: ✔</h3>
+		{% elif position == 2 %}
+		<h3>{% trans 'Your stance' %}: ➖</h3>
+		{% else %}
+		<h3>{% trans 'Your stance' %}: ✘</h3>
+		{% endif %}
+		<p></p>
+
+		{% for answer in answers %}
+		{% if answer.stance == 1 %}
+		<h3>{{ answer.party }}: ✔</h3>
+		{% elif answer.stance == 2 %}
+		<h3>{{ answer.party }}: ➖</h3>
+		{% else %}
+		<h3>{{ answer.party }}: ✘</h3>
+		{% endif %}
+		<p>{{ answer.reasoning }}</p>
+		{% endfor %}
+</div>
+{% endblock %}

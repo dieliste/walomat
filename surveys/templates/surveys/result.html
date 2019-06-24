@@ -22,51 +22,6 @@
 		{% endfor %}
 	</table>
 
-	<table class="result">
-		<tr>
-			<th></th>
-			{% for party in parties %}
-			{% if party.image %}
-			<th><img src="{{ party.image.url }}" title="{{ party }}" width="100" height="100" /></th>
-			{% else %}
-			<th>{{ party }}</th>
-			{% endif %}
-			{% endfor %}
-			<th>{% trans 'Your answers' %}</th>
-		</tr>
-		{% for row in stances %}
-		<tr>
-			{% for field in row %}
-			{% if field and field.stance %}
-			<td>
-				<details>
-					{% if field.stance == 1 %}
-					<summary>✔</summary>
-					{% elif field.stance == 2 %}
-					<summary>➖</summary>
-					{% else %}
-					<summary>✘</summary>
-					{% endif %}
-					<p>{{ field.reasoning }}</p>
-				</details>
-			</td>
-			{% elif field %}
-			{% if field == 1 %}
-			<td>✔</td>
-			{% elif field == 2 %}
-			<td>➖</td>
-			{% elif field == 3 %}
-			<td>✘</td>
-			{% else %}
-			<td>{{ field }}</td>
-			{% endif %}
-			{% else %}
-			<td>?</td>
-			{% endif %}
-			{% endfor %}
-		</tr>
-		{% endfor %}
-	</table>
-
+	<a href="{% url 'result_detail' election.slug 1 %}">{% trans 'Click here to see the answers of all parties' %}</a>
 </div>
 {% endblock %}

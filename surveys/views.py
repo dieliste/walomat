@@ -80,7 +80,7 @@ def result_index(request, slug):
     parties = []
     stances = []
 
-    if election:
+    if election.is_active():
         for party in election.party_set.all():
             parties.append(party)
             conformance[party.short_name] = 0
@@ -113,14 +113,49 @@ def result_index(request, slug):
             conformance[
                 party.short_name] /= election.thesis_set.all().count() / 100
 
-    context = {
-        'conformance': conformance,
-        'election': election,
-        'parties': parties,
-        'stances': stances
-    }
+        context = {
+            'conformance': conformance,
+            'election': election,
+            'parties': parties,
+            'stances': stances
+        }
 
-    return render(request, 'surveys/result.html', context)
+        return render(request, 'surveys/result.html', context)
+    else:
+        raise Http404("No Election matches the given query.")
+
+
+def result_detail(request, slug, thesis_no):
+    election = get_object_or_404(Election, slug=slug)
+    thesis = election.nth_thesis(thesis_no)
+
+    if 'stances-' + str(
+            election.id) not in request.session or not request.session[
+                'stances-' + str(election.id)][str(thesis.id)]:
+        raise Http404("No Stance matches the given query.")
+    else:
+        position = request.session['stances-' + str(election.id)][str(
+            thesis.id)]
+
+    if election.is_active() and thesis:
+        theses = election.thesis_set.all()
+
+        answers = thesis.answer_set.all()
+        next_thesis = election.nth_thesis(thesis_no + 1)
+
+        context = {
+            'election': election,
+            'thesis': thesis,
+            'thesis_no': thesis_no,
+            'theses': theses,
+            'next_thesis': next_thesis,
+            'position': position,
+            'answers': answers,
+        }
+
+        return render(request, 'surveys/result_thesis.html', context)
+    else:
+        raise Http404("No Thesis matches the given query.")
 
 
 def theses_pdf(request, slug):
