@@ -16,9 +16,7 @@
 		<p>{{ thesis.thesis }}</p>
 
 		{% if next_thesis %}
-		<ul>
-			<li><a href="{% url 'result_detail' election.slug thesis_no|add:1 %}"><button>{% trans 'Next thesis' %}</button></a></li>
-		</ul>
+		<div class="stance"><a href="{% url 'result_detail' election.slug thesis_no|add:1 %}"><button>{% trans 'Next thesis' %}</button></a></div>
 		{% endif %}
 	</div>
 		{% if position == 1 %}
