@@ -299,3 +299,9 @@ div.result table tr td:last-child,
 div.result table tr th:last-child {
 	border-right: 0;
 }
+
+div.result a {
+	text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.3em;
+}
