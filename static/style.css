@@ -198,7 +198,7 @@ div.stance {
     margin: 0.3em;
     text-align: center;
     flex-grow: 1;
-    flex-basis: 0;
+    flex-basis: 33%;
 }
 
 div.thesis nav {
@@ -296,3 +296,20 @@ div.result a {
     font-weight: bold;
     font-size: 1.3em;
 }
+
+@media screen and (max-width: 600px){
+    div.stances {
+        flex-direction: column;
+    }
+    
+    div.thesis > div {
+        padding: 1em;
+    }
+
+    main {
+        margin: auto;
+        padding: 0.3em;
+        border: none;
+    }
+}
+
