@@ -15,11 +15,11 @@
 
 		<p>{{ thesis.thesis }}</p>
 
-		<ul>
+        <div class="stances">
 			{% for stance_val, stance_desc in stances %}
-			<li><a href="{% url 'stance_detail' election.slug thesis_no stance_val %}"><button>{{ stance_desc }}</button></a></li>
+            <div class="stance"><a href="{% url 'stance_detail' election.slug thesis_no stance_val %}"><button>{{ stance_desc }}</button></a></div>
 			{% endfor %}
-		</ul>
+        </div>
 	</div>
 
 	<nav>

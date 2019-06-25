@@ -68,18 +68,17 @@ body {
 }
 
 main {
-	width: 606px;
-	margin: 50px auto;
-	padding: 20px;
+	max-width: 600px;
+	margin: 5em auto;
+	padding: 1.5em;
 	border: 3px solid white;
 }
 
 main img.lang {
-	width: 32px;
-	height: 16px;
+	width: 2em;
+	height: 1.3em;
 	float: right;
-	padding-left: 6px;
-	padding-bottom: 20px;
+	padding-left: 0.5em;
 }
 
 main header h1 span {
@@ -127,13 +126,14 @@ div.main ul li {
 }
 
 div.main ul li a button,
-div.thesis div ul li a button {
+div.stance button {
+    padding: 0.5em 0.3em;
+    width: 100%;
 	z-index: 1;
 	position: relative;
 	font-size: inherit;
 	font-family: inherit;
 	color: white;
-	padding: 0.5em 1em;
 	outline: none;
 	border: none;
 	background-color: #000;
@@ -141,12 +141,8 @@ div.thesis div ul li a button {
 	transition: color 0.4s ease-in-out;
 }
 
-div.thesis div ul li a button {
-	padding: 8px 30px;
-}
-
 div.main ul li a button::before,
-div.thesis div ul li a button::before {
+div.stance button::before {
 	content: '';
 	z-index: -1;
 	position: absolute;
@@ -158,25 +154,25 @@ div.thesis div ul li a button::before {
 	background-color: #ffcc00;
 	transform-origin: center;
 	transform: translate(-50%, -50%) scale(0);
-	transition: transform 0.45s ease-in-out;
+	transition: transform 0.3s ease-in-out;
 }
 
 div.main ul li a button:hover,
-div.thesis div ul li a button:hover {
+div.stance button:hover {
 	cursor: pointer;
 	color: #161616;
 }
 
-div.thesis div ul li:nth-child(1) a button::before {
+div.stance:nth-child(1) a button::before {
 	background-color: #33cc33;
 }
 
-div.thesis div ul li:nth-child(3) a button::before {
+div.stance:nth-child(3) a button::before {
 	background-color: #cc3300;
 }
 
 div.main ul li a button:hover::before,
-div.thesis div ul li a button:hover::before {
+div.stance button:hover::before {
 	transform: translate(-50%, -50%) scale(15);
 }
 
@@ -184,30 +180,25 @@ div.container p {
 	text-align: justify;
 }
 
-div.thesis div {
+div.thesis > div {
 	position: relative;
-	min-height: 108px;
-	margin: 30px;
-	padding: 10px 10px 50px 10px;
+	margin: 0.5em;
+    padding: 2em;
 	background-color: white;
 }
 
-div.thesis div ul {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: table;
-	list-style: none;
-	width: 470px;
-	margin: 0 auto;
-	padding: 0 0 15px 0;
-	border-spacing: 5px;
+div.stances {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-div.thesis div ul li {
-	display: table-cell;
-	text-align: center;
+div.stance {
+    overflow: hidden;
+    margin: 0.3em;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 div.thesis nav {
