@@ -71,6 +71,7 @@ def stance_detail(request, slug, thesis_no, stance_id):
 
     return redirect(index)
 
+
 @csp_update(STYLE_SRC=["'unsafe-inline'", "'self'"])
 def result_index(request, slug):
     election = get_object_or_404(Election, slug=slug)
