@@ -103,6 +103,17 @@ main header h1 span:hover::before {
 	transform: scaleX(1);
 }
 
+footer {
+	font-size: .7em;
+	text-align: center;
+	padding-top: 1em;
+}
+
+footer a {
+	margin: .7em;
+	text-decoration: underline;
+}
+
 div.container {
 	hyphens: auto;
 	-ms-hyphens: auto;
