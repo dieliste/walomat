@@ -132,7 +132,6 @@ div.main ul {
 div.main ul li {
 	display: table-cell;
 	text-align: center;
-	background-color: #000;
 	color: #fff;
 }
 
