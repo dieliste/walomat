@@ -1,5 +1,5 @@
 django ~= 2.2
-django-csp ~= 3.5
+django-csp ~= 3.6
 django-modeltranslation ~= 0.13
 pillow ~= 6.2.0
 reportlab ~= 3.5.19
