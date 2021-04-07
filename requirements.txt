@@ -1,4 +1,4 @@
-django ~= 2.2
+django ~= 3.2
 django-csp ~= 3.6
 django-modeltranslation ~= 0.15
 pillow ~= 7.2.0
